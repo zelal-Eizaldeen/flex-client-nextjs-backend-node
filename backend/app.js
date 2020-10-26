@@ -24,12 +24,15 @@ app.use(
    
   })
 )
+// app.use(express.static(path.join('public')));
 
 app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+   res.setHeader('Access-Control-Allow-Origin', 'https://flex-frontend-nextjs.herokuapp.com');
+
   res.setHeader(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept, Authorization'
@@ -43,7 +46,9 @@ app.use((req, res, next) => {
 app.use('/api/places', placesRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/programs', programsRoutes);
-
+// app.use((req, res, next) => {
+//   res.sendFile(path.resolve(__dirname, 'public/.next/server/pages', '_app.js' ));
+// })
 app.use((req, res, next) => {
   const error = new HttpError('Could not find this route.', 404);
   throw error;
@@ -67,7 +72,7 @@ mongoose
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.5rxpg.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(5001);
+    app.listen(process.env.PORT || 5000);
   })
   .catch(err => {
     console.log(err);

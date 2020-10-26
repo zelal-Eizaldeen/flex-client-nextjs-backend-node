@@ -127,8 +127,6 @@ const createProgram = async (req, res, next) => {
 };
 
 const updateProgram = async (req, res, next) => {
-  console.log("HEREEEEEE",  req.body)
-
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return next(
