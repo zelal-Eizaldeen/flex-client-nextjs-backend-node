@@ -10,7 +10,7 @@ const Users = ({users}) => {
 };
 
 Users.getInitialProps = async () => {
-  const response = await axios.get('http://localhost:5000/api/users');
+  const response = await axios.get(process.env.NEXT_PUBLIC_BACKEND_URL+'/users');
   return response.data;
 };
 

@@ -12,7 +12,7 @@ const UserPrograms = ({currentUser}) => {
     const fetchPrograms = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/programs/user/${currentUser.userId}`
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/programs/user/${currentUser.userId}`
         );
       
          setLoadedPrograms(responseData.programs);

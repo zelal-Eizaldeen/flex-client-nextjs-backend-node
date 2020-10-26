@@ -63,7 +63,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          'http://localhost:5000/api/users/signin',
+          process.env.NEXT_PUBLIC_BACKEND_URL+'/users/signin',
           'POST',
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -81,7 +81,7 @@ const Auth = () => {
     } else {
       try {
         const responseData= await sendRequest(
-          'http://localhost:5000/api/users/signup',
+          process.env.NEXT_PUBLIC_BACKEND_URL+'/users/signup',
           'POST',
           JSON.stringify({
             name: formState.inputs.name.value,

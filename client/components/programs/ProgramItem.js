@@ -23,7 +23,7 @@ const ProgramItem = (props) => {
   const confirmDeleteHandler = async() => {
     setShowConfirmModal(false);
     try {
-      sendRequest(`http://localhost:5000/api/programs/${props.id}`, 'DELETE');
+      sendRequest( process.env.NEXT_PUBLIC_BACKEND_URL +`/programs/${props.id}`, 'DELETE');
       props.onDelete(props.id);
      
     } catch (err){}

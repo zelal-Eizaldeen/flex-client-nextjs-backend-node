@@ -42,7 +42,7 @@ const NewProgram = () => {
   const programSubmitHandler = async event => {
     event.preventDefault();
     try {
-      await sendRequest('http://localhost:5000/api/programs', 'POST', 
+      await sendRequest(process.env.NEXT_PUBLIC_BACKEND_URL +'/programs', 'POST', 
         JSON.stringify({
             title: formState.inputs.title.value,
             description: formState.inputs.description.value,

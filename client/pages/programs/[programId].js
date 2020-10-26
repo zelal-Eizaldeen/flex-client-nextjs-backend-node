@@ -37,7 +37,7 @@ const ProgramShow = ({program}) => {
     const fetchProgram = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/programs/${programId}`
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/programs/${programId}`
         );
         setLoadedProgram(responseData.program);
         setFormData(
@@ -62,7 +62,7 @@ const ProgramShow = ({program}) => {
     event.preventDefault();
     try {
       await sendRequest(
-        `http://localhost:5000/api/programs/${programId}`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/programs/${programId}`,
         'PATCH',
         JSON.stringify({
           title: formState.inputs.title.value,

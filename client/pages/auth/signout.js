@@ -8,7 +8,7 @@ export default  () =>  {
   const doRequest = async () => {
     try {
       const responseData = await sendRequest(
-        'http://localhost:5000/api/users/signout',
+        process.env.NEXT_PUBLIC_BACKEND_URL +'/users/signout',
         'POST',
         {},
       );

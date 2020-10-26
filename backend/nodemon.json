@@ -1,0 +1,8 @@
+{
+  "env": {
+    "DB_USER": "zelal",
+    "DB_PASS": "aggregate88",
+    "DB_NAME": "metra",
+    "JWT_KEY": "supersecret_dont_share"
+  }
+}
