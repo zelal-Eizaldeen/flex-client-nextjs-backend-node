@@ -1,0 +1,28 @@
+.authentication__body {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(179, 229, 252, 1) 0%,
+    rgba(179, 229, 252, 1) 50%,
+    rgba(240, 98, 146, 1) 50%,
+    rgba(240, 98, 146, 1) 100%
+  );
+}
+
+.authentication__header {
+  color: white;
+  text-align: center;
+}
+
+.authentication {
+  width: 90%;
+  max-width: 25rem;
+  margin: 7rem auto;
+  text-align: center;
+}
+
+.authentication form {
+  margin-bottom: 1rem;
+}
