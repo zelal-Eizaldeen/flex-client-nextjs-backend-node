@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import useSWR from 'swr'
+
 import axios from 'axios';
 import styles from '../styles/Home.module.css';
 
@@ -67,11 +69,15 @@ const Home = ({ currentUser}) => {
 };
 
 export async function getServerSideProps({req}) {
-       const {data} = await axios.get( process.env.NEXT_PUBLIC_BACKEND_URL +'/users/currentuser', {
-         headers: req.headers,
-       });
-   //Pass data to the page via props
-   return { props: { data } }
+  if(req) {
+    const {data} = await axios.get( process.env.NEXT_PUBLIC_BACKEND_URL +'/users/currentuser', {
+      headers: req.headers,
+      withCredentials: true
+    });
+//Pass data to the page via props
+return { props: { data } }
+  }
+    
 }
 // Home.getInitialProps = async (context, client, currentUser)  => {
 //   console.log('From index', currentUser)

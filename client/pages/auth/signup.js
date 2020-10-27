@@ -63,7 +63,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          process.env.NEXT_PUBLIC_BACKEND_URL+'/users/signin',
+          process.env.NEXT_PUBLIC_BACKEND_URL +'/users/signin',
           'POST',
           JSON.stringify({
             email: formState.inputs.email.value,

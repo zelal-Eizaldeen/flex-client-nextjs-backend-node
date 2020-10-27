@@ -17,6 +17,7 @@ const app = express();
 app.set('trust proxy', true);
 
 app.use(bodyParser.json());
+
 app.use(
   cookieSession({
     signed: false,
@@ -30,8 +31,8 @@ app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-   res.setHeader('Access-Control-Allow-Origin', 'https://flex-frontend-nextjs.herokuapp.com');
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // res.setHeader('Access-Control-Allow-Origin', 'https://flex-frontend-nextjs.herokuapp.com');
 
   res.setHeader(
     'Access-Control-Allow-Headers',
