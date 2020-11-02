@@ -3,7 +3,6 @@ const { check } = require('express-validator');
 
 const usersController = require('../controllers/users-controllers');
 const checkAuth = require('../middleware/check-auth');
-const currentUser = require('../middleware/current-user');
 
 const fileUpload = require('../middleware/file-upload');
 

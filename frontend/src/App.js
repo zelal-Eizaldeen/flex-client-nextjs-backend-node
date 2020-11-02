@@ -8,6 +8,7 @@ import {
 
 // import Users from './user/pages/Users';
 import Home from './home/pages/Home';
+import Landing from "./home/pages/Landing";
 
 import NewProgram from './programs/pages/NewProgram';
 import UserPrograms from './programs/pages/UserPrograms';
@@ -27,7 +28,7 @@ const App = () => {
       <Switch>
         <Route path="/" exact>
           {/* <Users /> */}
-          <Home />
+          <Landing />
         </Route>
         <Route path="/:userId/programs" exact>
           <UserPrograms />
@@ -46,7 +47,7 @@ const App = () => {
       <Switch>
         <Route path="/" exact>
           {/* <Users/> */}
-          <Home />
+          <Landing/>
         </Route>
         <Route path="/auth" >
           <Auth />

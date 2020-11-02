@@ -1,6 +1,6 @@
 .main-navigation__menu-btn {
   width: 3rem;
-  height: 3rem;
+  height: rem;
   background: transparent;
   border: none;
   display: flex;
@@ -15,6 +15,7 @@
   width: 3rem;
   height: 2.5px;
   background: white;
+  margin-bottom: 15px;
 }
 
 .main-navigation__title {

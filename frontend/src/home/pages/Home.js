@@ -1,9 +1,5 @@
 import React, {useEffect, useState} from 'react';
-
-import ErrorModal from '../../shared/components/UIElements/ErrorModal';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import { useHttpClient } from '../../shared/hooks/http-hook';
-import { AuthContext } from '../../shared/context/auth-context';
 import { useAuth } from '../../shared/hooks/auth-hook';
 
 

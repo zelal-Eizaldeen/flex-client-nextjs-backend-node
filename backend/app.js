@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session')
 const mongoose = require('mongoose');
 
-const placesRoutes = require('./routes/places-routes');
 const programsRoutes = require('./routes/programs-routes');
 
 const usersRoutes = require('./routes/users-routes');
@@ -21,7 +20,7 @@ app.use(bodyParser.json());
 app.use(
   cookieSession({
     signed: false,
-    secure: false
+    secure: true
    
   })
 )
@@ -31,8 +30,7 @@ app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    // res.setHeader('Access-Control-Allow-Origin', 'https://flex-frontend-nextjs.herokuapp.com');
+  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
   res.setHeader(
     'Access-Control-Allow-Headers',
@@ -44,7 +42,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/places', placesRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/programs', programsRoutes);
 // app.use((req, res, next) => {

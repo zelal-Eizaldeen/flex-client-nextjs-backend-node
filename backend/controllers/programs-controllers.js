@@ -89,7 +89,6 @@ const createProgram = async (req, res, next) => {
     // image: req.file.path,
     creator: req.currentUser.userId
   });
-
   let user;
   try {
     user = await User.findById(req.currentUser.userId);
